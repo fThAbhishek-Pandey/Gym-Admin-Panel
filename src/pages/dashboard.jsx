@@ -28,23 +28,23 @@ const Dashboard = () => {
         </div>
         <div className='bg-slate-200'>
            <div className='grid grid-cols-6 justify-between'>
-            <p>Customer</p>
-            <p>Order ID</p>
-            <p>Date</p>
-            <p>Total Amount</p>
-            <p>Discount</p>
-            <p>Coopan used</p>
+            <p  >Customer</p>
+            <p  >Order ID</p>
+            <p  >Date</p>
+            <p  >Total Amount</p>
+            <p  >Discount</p>
+            <p  >Coopan used</p>
            </div>
         </div>
         <div className='bg-slate-50' >
           <div className='grid grid-cols-6 justify-between'>
             <div className='flex gap-2'>
-             <input type="checkbox" />
-              <img className='w-8 h-8' src={assets().userLogo} alt="img" />
-              <p className='w-min'>Abhishek</p>
+              <input type="checkbox" />
+              <img onClick={()=>Navigate(`/constomer/abhishek`)}  className='w-8 h-8' src={assets().userLogo} alt="img" />
+              <p   onClick={()=>Navigate(`/constomer/abhishek`)} className='w-min'>Abhishek</p>
             </div>
             
-            <p onClick={()=> Navigate('/1234')}>#1234</p>
+            <p onClick={()=> Navigate('/order/1234')}>#1234</p>
             <p>2025</p>
             <p>₹ 500</p>
             <p>₹ 50</p>
@@ -53,10 +53,10 @@ const Dashboard = () => {
           <div className='grid grid-cols-6 justify-between'>
             <div className='flex gap-2'>
             <input type="checkbox" />
-              <img className='w-8 h-8' src={assets().userLogo} alt="img" />
-              <p>Abhishek</p>
+              <img onClick={()=>Navigate(`/constomer/abhishek`)} className='w-8 h-8' src={assets().userLogo} alt="img" />
+              <p  onClick={()=>Navigate(`/constomer/abhishek`)} >Abhishek</p>
             </div>
-            <p onClick={()=> Navigate('/1234')}>#1234</p>
+            <p onClick={()=> Navigate('/order/1234')}>#1234</p>
             <p>2025</p>
             <p>₹ 500</p>
             <p>₹ 50</p>
@@ -65,10 +65,10 @@ const Dashboard = () => {
           <div className='grid grid-cols-6 justify-between'>
             <div className='flex gap-2'>
             <input type="checkbox" />
-              <img className='w-8 h-8' src={assets().userLogo} alt="img" />
-              <p>Abhishek</p>
+              <img onClick={()=>Navigate(`/constomer/abhishek`)} className='w-8 h-8' src={assets().userLogo} alt="img" />
+              <p onClick={()=>Navigate(`/constomer/abhishek`)} >Abhishek</p>
             </div>
-            <p onClick={()=> Navigate('/1234')} >#1234</p>
+            <p onClick={()=> Navigate('/order/1234')} >#1234</p>
             <p>2025</p>
             <p>₹ 500</p>
             <p>₹ 50</p>
@@ -77,10 +77,10 @@ const Dashboard = () => {
           <div className='grid grid-cols-6 justify-between'>
             <div className='flex gap-2'>
             <input type="checkbox" />
-              <img className='w-8 h-8' src={assets().userLogo} alt="img" />
-              <p>Abhishek</p>
+              <img onClick={()=>Navigate(`/constomer/abhishek`)} className='w-8 h-8' src={assets().userLogo} alt="img" />
+              <p onClick={()=>Navigate(`/constomer/abhishek`)} >Abhishek</p>
             </div>
-            <p onClick={()=> Navigate('/1234')} >#1234</p>
+            <p onClick={()=> Navigate('/order/1234')} >#1234</p>
             <p>2025</p>
             <p>₹ 500</p>
             <p>₹ 50</p>

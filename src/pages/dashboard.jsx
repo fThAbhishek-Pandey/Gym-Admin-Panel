@@ -7,10 +7,10 @@ const Dashboard = () => {
   return (
     <div className='bg-slate-100 min-h-full'>
         <div className='flex flex-row justify-between gap-5 m-12'>
-        <DashBox img ={assets().reactlogo} parameter={"Total Orders"} count = {"1750"} rate ={"8.56%"} />
-        <DashBox img ={assets().reactlogo} parameter={'Total Deliverd'} count = {"567"} rate ={"9.6"}/>
-        <DashBox img ={assets().reactlogo} parameter={"Total Revenue"} count = {"129750"} rate ={"9.6"}/>
-        <DashBox img ={assets().reactlogo} parameter={"Pending"} count = {"12500"} rate ={"12.3"}/>
+        <DashBox img ={assets().Total_order} parameter={"Total Orders"} count = {"1750"} rate ={"8.56%"} />
+        <DashBox img ={assets().Delivered} parameter={'Total Deliverd'} count = {"567"} rate ={"9.6"}/>
+        <DashBox img ={assets().Revenue} parameter={"Total Revenue"} count = {"129750"} rate ={"9.6"}/>
+        <DashBox img ={assets().Payment} parameter={"Pending"} count = {"12500"} rate ={"12.3"}/>
         </div>
         <div className='flex flex-row justify-between mx-12 my-5'>
           <div className='flex flex-row justify-start bg-white border border-r-2' >
@@ -40,7 +40,7 @@ const Dashboard = () => {
           <div className='grid grid-cols-6 justify-between'>
             <div className='flex gap-2'>
               <input type="checkbox" />
-              <img onClick={()=>Navigate(`/constomer/abhishek`)}  className='w-8 h-8' src={assets().userLogo} alt="img" />
+              <img onClick={()=>Navigate(`/constomer/abhishek`)}  className='w-8 h-8 hover:underline hover:bg-slate-950' src={assets().userLogo} alt="img" />
               <p   onClick={()=>Navigate(`/constomer/abhishek`)} className='w-min'>Abhishek</p>
             </div>
             

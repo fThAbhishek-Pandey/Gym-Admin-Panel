@@ -1,6 +1,6 @@
 import React from 'react'
-import DashBox from '../component/Dashboard/DashBox'
-import { assets } from '../assets/assest'
+import DashBox from '../../component/Admin/Dashboard/DashBox'
+import { assets } from '../../assets/assest'
 import { useNavigate } from 'react-router-dom'
 const Dashboard = () => {
   const Navigate = useNavigate()

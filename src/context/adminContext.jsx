@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 export const adminContext = createContext();
-import onLoginHandleAdmin from "../functions/Context/AdminContext/onhadelLogin";
-import onLogoutHandel from "../functions/Context/AdminContext/onLogoutHandel";
+import onLoginHandleAdmin from "../utils/Context/AdminContext/onhadelLogin";
+import onLogoutHandel from "../utils/Context/AdminContext/onLogoutHandel";
 const AdminContextProvider = (props) => {
   const [adminToken, setAdminToken] = useState(
     localStorage.getItem("adminToken") || ""

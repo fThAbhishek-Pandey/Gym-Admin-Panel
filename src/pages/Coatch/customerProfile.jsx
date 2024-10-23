@@ -1,8 +1,9 @@
 import React from "react";
-import { assets } from "../assets/assest";
-import { useNavigate } from "react-router-dom";
+import { assets } from "../../assets/assest";
+import { useNavigate, useParams } from "react-router-dom";
 const CustomerProfile = () => {
   const  Navigate = useNavigate()
+  const {id}= useParams()
   return (
     <div className="w-full">
       <div className="flex w-full gap-5 bg-green-100">
@@ -13,7 +14,7 @@ const CustomerProfile = () => {
         />
         <div>
           <div className="border-b-4 w-full">
-            Babu Bhaiya <span>userid</span>
+            Babu Bhaiya <span>{id}</span>
           </div>
           <div className="flex">
             <div>

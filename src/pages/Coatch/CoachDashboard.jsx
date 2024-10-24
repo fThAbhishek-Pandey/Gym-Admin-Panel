@@ -1,8 +1,10 @@
 import React ,{useContext, useEffect, useState}from 'react'
 import { coachContext } from '../../context/coachContext'
 import { assets } from '../../assets/assest';
+import DashBox from '../../component/app/DashBox'
 import { PrevPagination } from '../../utils/Coach/coachBoard/pagination';
 import { NextPagination } from '../../utils/Coach/coachBoard/pagination';
+import { findDate } from '../../utils/Coach/coachBoard/findDate';
 const CoachDashboard = () => {
   const {handelCoachboard, coachData }= useContext(coachContext);
   const [order, setOrder]= useState(false);
@@ -41,6 +43,14 @@ const CoachDashboard = () => {
           </div>
         </div>
       </div>
+      <div className='bg-green-300 p-4'>
+          <p>Summary</p>
+      <div className='flex flex-row gap-3 p-2 justify-around'>
+        <DashBox img ={assets().Total_order} parameter={"Total Orders"} count = {coachData.totalOrder} rate ={""} symbol={"₹ "} />
+        <DashBox img ={assets().Delivered} parameter={'Total Deliverd'} count = {coachData.totalDelivered} rate ={""} symbol={""}/>
+        <DashBox img ={assets().Revenue} parameter={"Total Revenue"} count = {coachData.totalRevenue} rate ={""} symbol={"₹ "} />
+      </div>
+      </div>
      <div className="flex justify-between font-bold text-2xl mt-5 mb-5">
       <p>All Orders</p>
      
@@ -64,27 +74,32 @@ const CoachDashboard = () => {
       {/* all order by this user */}
 
       <div className="bg-green-400">
-        <div className="grid grid-cols-6 justify-between mb-3">
+        <div className="grid grid-cols-7 justify-between mb-3">
           <input type="checkbox" name="" id="" />
           <p>Order ID</p>
           <p>Date</p>
           <p>Total Amount</p>
           <p>Discount</p>
           <p>Coopan used</p>
+          <p>Staus</p>
         </div>
       </div>
-      <div className="flex flex-col w-full gap-3">
+      <div className="flex flex-col w-full gap-3 mx-0.1">
         {order && order.map((item,index)=>(
-        <div key={index} className="grid grid-cols-6 justify-between bg-green-100">
-            <input type="checkbox" name="" id="" />
+        <div key={index} className="grid grid-cols-7 justify-between bg-green-100">
+          <div className='flex gap-1 mr-2'>
+          <input type="checkbox" name="" id="" />
+           <div className='flex justify-start gap-2'>
+             <img className='bg-green-500 w-12 h-12 rounded-full ' src= {assets().user} alt="" />
+             <p>{item.userId.name}</p>
+           </div>
+          </div>
             <p >{item._id}</p>
-            <p>{()=>{
-                 const createdAt = new Date(item.createdAt)
-                 return ( <p> {createdAt.getDate()}</p>)
-}}</p>
+            <p>{findDate(item.createdAt)}</p>
             <p>{item.price}</p>
             <p>{item.discount}</p>
             <p>fth123</p>
+            <div className={`m-5 p-2 rounded ${item.isDelivered?'bg-green-500':'bg-red-500'}`} >{item.isDelivered? 'Delived': 'not delivered'}</div>
           </div>))}
           
       </div>

@@ -7,6 +7,7 @@ import Delivered from './images/delivered.png'
 import Revenue from './images/revenue.png'
 import Payment from './images/payment.png'
 import coach from './images/avatar.svg'
+import user from './images/user.svg'
 export function assets (){
       return {
         filter_icon,
@@ -17,6 +18,7 @@ export function assets (){
         Delivered,
         Revenue,
         Payment,
-        coach
+        coach,
+        user
       }
 }

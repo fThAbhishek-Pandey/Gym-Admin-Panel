@@ -1,5 +1,5 @@
 import React from 'react'
-import DashBox from '../../component/Admin/Dashboard/DashBox'
+import DashBox from '../../component/app/DashBox'
 import { assets } from '../../assets/assest'
 import { useNavigate } from 'react-router-dom'
 const Dashboard = () => {

@@ -12,7 +12,7 @@ const CoachDashboard = () => {
    console.log("console.log(CoachData);",coachData);
   },[])
   useEffect(()=>{
-    setOrder(coachData.order)
+    setOrder(coachData.orders)
     console.log("console.log(CoachData);",coachData,order);
   },[i,coachData])
   return  coachData.coach && (
@@ -36,7 +36,7 @@ const CoachDashboard = () => {
             <div className='flex flex-col gap-3'>
               <p className='bg-green-200 p-1' >{coachData.coach.phone}</p>
               <p className='bg-green-200 p-1' >{coachData.coach.email}</p>
-              <p className='bg-green-200 p-1' >{coachData.order.length}</p>
+              <p className='bg-green-200 p-1' >{coachData.orders.length}</p>
             </div>
           </div>
         </div>

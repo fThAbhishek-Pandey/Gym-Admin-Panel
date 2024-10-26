@@ -11,14 +11,19 @@ function App() {
   return (
     <>
       {!(adminToken || coachToken) ? (
-        <Login />
+        <div>
+               <Login />
+               <ToastContainer />
+        </div>
+       
       ) : (
         <div>
        { adminToken &&  <Home />}
        { coachToken && <CoachHome/> }
+       <ToastContainer />
         </div>
       )}
-      <ToastContainer />
+     
     </>
   );
 }

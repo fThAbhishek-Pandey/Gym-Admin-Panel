@@ -101,10 +101,14 @@ useEffect(() => {
       {/* all order by this user */}
 
       <div className="bg-green-400">
-        <div className="grid grid-cols-7 justify-between mb-3">
+        <div className="grid grid-cols-[2fr_2fr_1fr_1fr_1fr_1fr_1fr] mb-3">
+          <div className='flex gap-2 justify-center'>
           <input type="checkbox" name="" id="" />
-          <p>Order ID</p>
-          <p>Date</p>
+          <p>User</p>
+          </div>
+         
+          <p >Order ID</p>
+          <p className='mx-3'>Date</p>
           <p>Total Amount</p>
           <p>Discount</p>
           <p>Coopan used</p>
@@ -116,16 +120,16 @@ useEffect(() => {
           
           searchData
         && searchData.map((item,index)=>(
-        <div key={index} className="grid grid-cols-7 justify-between bg-green-100">
-          <div className='flex gap-1 mr-2'>
-          <input className='w-4 h-4 rounded-full ' type="checkbox" name="" id="" />
-           <div className='flex justify-start gap-2'>
+        <div key={index} className="grid grid-cols-[2fr_2fr_1fr_1fr_1fr_1fr_1fr] justify-between bg-green-100">
+          <div className='flex gap-2  flex-row justify-center'>
+          <input className='w-4 h-4 rounded-full ' type="checkbox" />
+           <div className='flex flex-row justify-start gap-2'>
              <img className='bg-green-500 w-12 h-12 rounded-full' src= {assets().user} alt="" />
              <p className='w-12 ' >{item.userId.name}</p>
            </div>
           </div>
             <p className=' text-sm text-wrap'>{item._id}</p>
-            <p className=' text-sm text-wrap'>{findDate(item.createdAt)}</p>
+            <p className=' text-sm text-wrap '>{findDate(item.createdAt)}</p>
             <p className=' text-sm text-wrap'>{item.price}</p>
             <p className=' text-sm text-wrap'>{item.discount}</p>
             <p className=' text-sm text-wrap'>fth123</p>
@@ -137,7 +141,7 @@ useEffect(() => {
       <div className="flex flex-row justify-around m-8 ">
         <button onClick={()=>PrevPagination(i)} className="bg-green-200 p-2 rounded">Prev</button>
         <div className="bg-green-200 p-2 rounded">
-          page {i} of {coachData.totalPages}
+          page {coachData.currentPage} of {coachData.totalPages}
         </div>
         <button onClick={()=>NextPagination(i)} className="bg-green-200 p-2 rounded">next</button>
       </div>

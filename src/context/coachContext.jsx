@@ -9,7 +9,8 @@ export  const coachContext = createContext()
 const CoachContextProvider = (props)=>{
     const [coachToken, setCoachToken] = useState(localStorage.getItem('coachToken')|| false)
     const backendURL = import.meta.env.VITE_BACKEND_URL
-    const [coachData,setCoachData]= useState(false)
+    const [coachData,setCoachData]= useState([])
+   
     const navigate = useNavigate();
 const handleLoginCoach= async(email, password )=>{
     await loginCoach(backendURL,setCoachToken,email, password)
@@ -19,7 +20,6 @@ const handleLogoutCoach = ()=>{
 }
 const handelCoachboard = async ()=>{
     await CoachBoard(backendURL,coachToken, setCoachData)
-    console.log("higk : ",coachData)
 }
 
 const value = {
@@ -28,7 +28,7 @@ const value = {
   handleLoginCoach,
   handleLogoutCoach,
   handelCoachboard,
-  coachData
+  coachData,
 }
 
     return (
